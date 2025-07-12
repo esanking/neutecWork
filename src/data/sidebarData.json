@@ -1,0 +1,35 @@
+[
+  {
+    "key": "64f",
+    "text": "好喝黑糖",
+    "children": [
+      {
+        "key": "445",
+        "text": "黑糖鮮奶",
+        "children": [
+          { "key": "37a", "text": "黑糖珍珠鮮奶" },
+          { "key": "feb", "text": "黑糖芋圓鮮奶" },
+          { "key": "59c", "text": "黑糖蒟蒻鮮奶" }
+        ]
+      },
+      {
+        "key": "29e",
+        "text": "黑糖冬瓜",
+        "children": [
+          { "key": "ac3", "text": "黑糖冬瓜牛奶" },
+          { "key": "ca0", "text": "黑糖冬瓜珍珠" }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "6c3",
+    "text": "茶",
+    "children": [
+      { "key": "5dc", "text": "烏龍綠" },
+      { "key": "b5f", "text": "綠茶" },
+      { "key": "b09", "text": "紅茶" },
+      { "key": "887", "text": "青茶" }
+    ]
+  }
+]
