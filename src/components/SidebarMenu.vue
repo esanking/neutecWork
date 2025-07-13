@@ -1,11 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { ref, provide } from 'vue'
+import type { Ref } from 'vue'
 import SidebarItem from './SidebarItem.vue'
 import data from '../data/sidebarData.json'
+import type { SidebarItemType } from '@/types/sidebar'
 
-const selectedPath = ref([])
+const selectedPath: Ref<string[]> = ref([])
 
-function findPath(tree, key, path = []) {
+function findPath(tree: SidebarItemType[], key: string, path: string[] = []): string[] {
   for (const item of tree) {
     const currentPath = [...path, item.key]
     if (item.key === key) return currentPath
@@ -17,7 +19,7 @@ function findPath(tree, key, path = []) {
   return []
 }
 
-function setSelected(key) {
+function setSelected(key: string) {
   selectedPath.value = findPath(data, key)
 }
 

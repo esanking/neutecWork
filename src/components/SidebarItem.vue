@@ -1,13 +1,14 @@
-<script setup>
-import { inject, computed } from 'vue'
+<script setup lang="ts">
+import { inject, computed, type Ref } from 'vue'
+import type { SidebarItemType } from '@/types/sidebar'
 
-const props = defineProps({
-  item: Object,
-  level: Number,
-})
+const props = defineProps<{
+  item: SidebarItemType
+  level: number
+}>()
 
-const selectedPath = inject('selectedPath')
-const setSelected = inject('setSelected')
+const selectedPath = inject<Ref<string[]>>('selectedPath')!
+const setSelected = inject<(key: string) => void>('setSelected')!
 
 const shouldExpand = computed(() => selectedPath.value.includes(props.item.key))
 </script>
@@ -19,7 +20,6 @@ const shouldExpand = computed(() => selectedPath.value.includes(props.item.key))
         color: selectedPath.includes(item.key) ? 'yellow' : '#fff',
         fontWeight: selectedPath.includes(item.key) ? 'bold' : 'normal',
         cursor: 'pointer',
-        padding: '2px 4px',
       }"
       @click="setSelected(item.key)"
     >
