@@ -50,9 +50,10 @@ provide('setSelected', setSelected)
   right: 0;
   width: 250px;
   height: 100vh;
-  background: #000;
+  background: rgba(0, 0, 0, 0.9);
   padding: 12px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
+  z-index: 100;
 }
 </style>

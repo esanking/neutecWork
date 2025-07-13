@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import SidebarMenu from '../components/SidebarMenu.vue'
-
+import NineGrid from '@/components/NineGrid.vue'
 const isSidebarOpen = ref(false)
 
 function toggleSidebar() {
@@ -21,6 +21,7 @@ function closeSidebar() {
         <SidebarMenu v-if="isSidebarOpen" @close="closeSidebar" />
       </Transition>
     </div>
+    <NineGrid />
   </div>
 </template>
 
@@ -29,6 +30,7 @@ function closeSidebar() {
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   background-color: gray;
   .navBar {
     width: 100%;
