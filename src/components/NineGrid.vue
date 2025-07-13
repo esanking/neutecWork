@@ -4,7 +4,7 @@ import type { CSSProperties } from 'vue'
 
 function ballStyle(i: number): CSSProperties {
   const gap = 6
-  const cellWidth = (390 - gap * 2) / 3
+  const cellWidth = (window.innerWidth - gap * 2) / 3
   const cellHeight = 100
   const ballSize = 30
   const row = Math.floor((i - 1) / 3)
@@ -30,7 +30,7 @@ onMounted(() => {
 
 function animateBall(el: HTMLElement) {
   let pos = 0
-  const max = 320
+  const max = (window.innerWidth / 3) * 2
   const speed = 3
 
   function step() {
@@ -74,6 +74,7 @@ function animateBall(el: HTMLElement) {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .grid-container {
@@ -82,7 +83,7 @@ function animateBall(el: HTMLElement) {
   grid-template-columns: repeat(3, 1fr);
   gap: 6px;
   width: 100%;
-  max-width: 600px;
+  max-width: 390px;
 }
 
 .grid-item {
